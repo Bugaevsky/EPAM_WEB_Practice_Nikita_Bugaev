@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Arial');
+
+$base-font: 'Arial';
+$title-padding: 3em;
+
+h1 {
+  font-family: $base-font;
+  padding: $title-padding;
+  display: flex;
+  justify-content: center;
+}
