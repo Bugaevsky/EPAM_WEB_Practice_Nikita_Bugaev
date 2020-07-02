@@ -1,2 +1,2 @@
-@import url(https://fonts.googleapis.com/css?family=Arial);body{background:orange}
-h1{font-family:"Arial";padding:3em;display:flex;justify-content:center}
+body{background:orange}
+body{font:100% Helvetica,sans-serif;color:#333;display:flex;justify-content:center}

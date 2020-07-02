@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Arial');
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
 
-$base-font: 'Arial';
-$title-padding: 3em;
-
-h1 {
-  font-family: $base-font;
-  padding: $title-padding;
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
   display: flex;
   justify-content: center;
 }
