@@ -1,7 +1,8 @@
 @import "_variables.scss";
 
-body {
-  color: $primary-color;
+.hello  {
   display: flex;
   justify-content: center;
+  font-size: 25px;
+  font-family: $font-stack;
 }
