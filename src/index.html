@@ -9,42 +9,43 @@
 </head>
 <body>
 <div class="page">
-    <div id="AllVoices" class="tabcontent">
+    <div id="AllVoices" class="activeText">
         <h1>Active: All voices</h1>
     </div>
 
-    <div id="Microphone" class="tabcontent">
+    <div id="Microphone" class="activeText">
         <h1>Active: speaker-mode</h1>
     </div>
 
-    <div id="Stream" class="tabcontent">
+    <div id="Stream" class="activeText">
         <h1>Active: stream</h1>
     </div>
     <div class="toolbar">
-        <button class="tablink" onclick="chooseMode('AllVoices', this)" id="defaultOpen"><i class="fa fa-bars"></i><br /><br />All voices</button>
-        <button class="tablink" onclick="chooseMode('Microphone', this)"><i class="fa fa-microphone"></i><br /><br />Microphone</button>
-        <button class="tablink" onclick="chooseMode('Stream', this)"><i class="fa fa-camera"></i><br /><br />Stream</button>
+        <button class="barButton" onclick="chooseMode('Stream', this)"><i class="fa fa-camera"></i><br /><br />Stream</button>
+        <button class="barButton" onclick="chooseMode('Microphone', this)"><i class="fa fa-microphone"></i><br /><br />Microphone</button>
+        <button class="barButton" onclick="chooseMode('AllVoices', this)" id="defaultOpen"><i class="fa fa-bars"></i><br /><br />All voices</button>
     </div>
 </div>
+<script src="js/toolbar.js"></script>
 <script type="text/javascript">
     function chooseMode(mode, elmnt) {
-        // Hide all elements with class="tabcontent" by default */
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
+        // Hide all elements with class="activeText" by default */
+        var i, activeText, barButton;
+        activeText = document.getElementsByClassName("activeText");
+        for (i = 0; i < activeText.length; i++) {
+            activeText[i].style.display = "none";
         }
 
-        // Remove the color of all tablinks/buttons
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].style.color = "";
+        // Remove the color of all barButton/buttons
+        barButton = document.getElementsByClassName("barButton");
+        for (i = 0; i < barButton.length; i++) {
+            barButton[i].style.color = "";
         }
 
-        // Show the specific tab content
+        // Show the specific barButton
         document.getElementById(mode).style.display = "block";
 
-        // Add the specific color to the button used to open the tab content
+        // Add the specific color to the button used to open barButton
         elmnt.style.color = '#23aea3';
     }
 
