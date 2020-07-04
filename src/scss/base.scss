@@ -1,5 +1,37 @@
-@import "_variables.scss";
+@import '_variables.scss';
+.page {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: $font-stack;
+  font-size: calc(1em + 1.2vw);
+}
 
 body {
-  background: $bg-color;
+  background-color: white;
+}
+
+.toolbar {
+  margin-top: auto;
+  box-shadow: 0px -7px 10px -9px $font-color;
+}
+
+/* Style the tab buttons */
+.tablink {
+  background-color: white;
+  color: grey;
+  float: right;
+  border: none;
+  outline: none;
+  padding: 3%;
+  width: 33.33333%;
+}
+
+/* Set default styles for tab content */
+.tabcontent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

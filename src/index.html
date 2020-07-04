@@ -1,15 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel='stylesheet' href='../dist/style.css'>
     <link rel='stylesheet' href='../dist/normalize.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
-<div class="hello">
-    <p>Hello world!</p>
+<div class="page">
+    <div id="AllVoices" class="tabcontent">
+        <h1>Active: All voices</h1>
+    </div>
+
+    <div id="Microphone" class="tabcontent">
+        <h1>Active: speaker-mode</h1>
+    </div>
+
+    <div id="Stream" class="tabcontent">
+        <h1>Active: stream</h1>
+    </div>
+    <div class="toolbar">
+        <button class="tablink" onclick="chooseMode('AllVoices', this)" id="defaultOpen"><i class="fa fa-bars"></i><br /><br />All voices</button>
+        <button class="tablink" onclick="chooseMode('Microphone', this)"><i class="fa fa-microphone"></i><br /><br />Microphone</button>
+        <button class="tablink" onclick="chooseMode('Stream', this)"><i class="fa fa-camera"></i><br /><br />Stream</button>
+    </div>
 </div>
+<script type="text/javascript">
+    function chooseMode(mode, elmnt) {
+        // Hide all elements with class="tabcontent" by default */
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Remove the color of all tablinks/buttons
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.color = "";
+        }
+
+        // Show the specific tab content
+        document.getElementById(mode).style.display = "block";
+
+        // Add the specific color to the button used to open the tab content
+        elmnt.style.color = '#23aea3';
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
 </body>
 </html>
