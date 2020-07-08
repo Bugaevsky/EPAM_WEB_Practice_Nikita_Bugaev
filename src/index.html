@@ -1,15 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel='stylesheet' href='../dist/style.css'>
-    <link rel='stylesheet' href='../dist/normalize.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
-<div class="hello">
-    <p>Hello world!</p>
+<div class="page">
+    <div id="AllVoices" class="activeText">
+        <h1>Active: All voices</h1>
+    </div>
+
+    <div id="Microphone" class="activeText">
+        <h1>Active: speaker-mode</h1>
+    </div>
+
+    <div id="Stream" class="activeText">
+        <h1>Active: stream</h1>
+    </div>
+    <div class="toolbar">
+        <button id="myAllVoices" class="barButton" ><i class="fa fa-bars"></i>
+            All voices
+        </button>
+        </button>
+        <button id="myMicrophone" class="barButton"><i class="fa fa-microphone"></i>
+            Microphone
+        </button>
+        <button id="myStream" class="barButton"><i class="fa fa-camera"></i>
+            Stream
+        </button>
+    </div>
 </div>
 </body>
 </html>
