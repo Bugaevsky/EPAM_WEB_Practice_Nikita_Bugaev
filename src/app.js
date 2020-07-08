@@ -13,5 +13,4 @@ myAllVoices.addEventListener("click", function(){chooseMode('AllVoices', this)})
 myStream.addEventListener("click", function(){chooseMode('Stream', this)});
 myMicrophone.addEventListener("click", function(){chooseMode('Microphone', this)});
 
-// Get the element with id="myAllVoices" and click on it
-document.getElementById("myAllVoices").click();
+chooseMode('AllVoices', myAllVoices);
