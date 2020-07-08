@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel='stylesheet' href='../dist/style.css'>
-    <link rel='stylesheet' href='../dist/normalize.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -21,17 +19,17 @@
         <h1>Active: stream</h1>
     </div>
     <div class="toolbar">
-        <button class="barButton" onclick="chooseMode('Stream', this)"><i class="fa fa-camera"></i>
-            <div style="position: relative;">Stream</div>
+        <button id="myAllVoices" class="barButton" onclick="chooseMode('AllVoices', this)"><i class="fa fa-bars"></i>
+            All voices
         </button>
-        <button class="barButton" onclick="chooseMode('Microphone', this)"><i class="fa fa-microphone"></i>
-            <div style="position: relative;">Microphone</div>
         </button>
-        <button class="barButton" onclick="chooseMode('AllVoices', this)" id="defaultOpen"><i class="fa fa-bars"></i>
-            <div style="position: relative;">All voices</div>
+        <button id="myMicrophone" class="barButton" onclick="chooseMode('Microphone', this)"><i class="fa fa-microphone"></i>
+            Microphone
+        </button>
+        <button id="myStream" class="barButton" onclick="chooseMode('Stream', this)"><i class="fa fa-camera"></i>
+            Stream
         </button>
     </div>
 </div>
-<script src="../src/js/toolbar.js"></script>
 </body>
 </html>
