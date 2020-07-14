@@ -1,6 +1,6 @@
 export function chooseMode(mode, elmnt) {
     // Hide all elements with class="activeText" by default */
-    var i, activeText, barButton;
+    let i, activeText, barButton;
     activeText = document.getElementsByClassName("activeText");
     for (i = 0; i < activeText.length; i++) {
         activeText[i].style.display = "none";
