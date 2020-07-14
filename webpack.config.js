@@ -11,23 +11,29 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader']
-                })
+                test: /\.s[ac]ss$/i,
+                use: ['style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ],
             },
             {
-                test: /\.m?js$/,
+                test: /\.css$/i,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ],
+            },
+            {
+                test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env'],
-                        plugins: ['@babel/plugin-proposal-object-rest-spread']
-        }
-    }
-}
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
         ]
     },
     plugins: [
