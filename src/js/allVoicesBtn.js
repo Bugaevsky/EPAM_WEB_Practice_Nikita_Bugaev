@@ -2,7 +2,7 @@ export function getAllVoices() {
     const url = new URL('https://voicy-speaker.herokuapp.com');
     const xhr = new XMLHttpRequest();
 
-    xhr.open('GET', '${url}voices');
+    xhr.open('GET', url + 'voices');
 
     xhr.responseType = 'json';
 
