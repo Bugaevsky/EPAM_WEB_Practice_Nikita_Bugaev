@@ -8,9 +8,9 @@ import {record} from "./js/microphoneBtn";
 import {listenStream} from "./js/streamBtn";
 import {getAllVoices} from "./js/allVoicesBtn";
 
-var myAllVoices = document.getElementById("myAllVoices");
-var myStream = document.getElementById("myStream");
-var myMicrophone = document.getElementById("myMicrophone");
+const myAllVoices = document.getElementById("myAllVoices");
+const myStream = document.getElementById("myStream");
+const myMicrophone = document.getElementById("myMicrophone");
 
 myAllVoices.addEventListener("click", function () {
     chooseMode('AllVoices', this)

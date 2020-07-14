@@ -1,7 +1,7 @@
 import io from "socket.io-client";
 
 export function record() {
-    let url = new URL('https://voicy-speaker.herokuapp.com');
+    const url = new URL('https://voicy-speaker.herokuapp.com');
     const socket = io.connect(url);
 
     console.log(document.getElementsByClassName("activeText"));

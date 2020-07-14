@@ -1,6 +1,6 @@
 export function getAllVoices() {
-    let url = new URL('https://voicy-speaker.herokuapp.com');
-    let xhr = new XMLHttpRequest();
+    const url = new URL('https://voicy-speaker.herokuapp.com');
+    const xhr = new XMLHttpRequest();
 
     xhr.open('GET', '${url}voices');
 
@@ -15,7 +15,7 @@ export function getAllVoices() {
             const voicesLength = xhr.response.length;
             for (let i = 0;i < voicesLength; i++) {
                 if (xhr.response.length) {
-                    let li = document.createElement('li');
+                    const li = document.createElement('li');
                     li.classList.add('audioElement');
                     li.innerHTML = xhr.response[i].timeStamp.substr(0, 24);
                     document.getElementById('voicesList').appendChild(li);

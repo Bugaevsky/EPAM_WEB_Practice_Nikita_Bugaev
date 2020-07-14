@@ -1,6 +1,6 @@
 export function listenStream() {
-    let xhr = new XMLHttpRequest();
-    let url = new URL('https://voicy-speaker.herokuapp.com');
+    const xhr = new XMLHttpRequest();
+    const url = new URL('https://voicy-speaker.herokuapp.com');
 
     xhr.open('GET', '${url}voices');
 
@@ -19,7 +19,7 @@ export function listenStream() {
                 }, 3000);
                 xhr.send();
                 xhr.onload = function () {
-                    let newVoicesCount = xhr.response.length;
+                    const newVoicesCount = xhr.response.length;
                     if (newVoicesCount != voicesCount) {
                         const audioBlob = new Blob([new Uint8Array(xhr.response[xhr.response.length - 1].audioBlob[0].data).buffer]);
                         const audioUrl = URL.createObjectURL(audioBlob);
