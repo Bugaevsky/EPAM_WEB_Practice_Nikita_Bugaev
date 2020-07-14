@@ -1,8 +1,8 @@
 import io from "socket.io-client";
 
 export function record() {
-    const socket = io.connect('https://voicy-speaker.herokuapp.com');
     let url = new URL('https://voicy-speaker.herokuapp.com');
+    const socket = io.connect(url);
 
     console.log(document.getElementsByClassName("activeText"));
 
@@ -28,7 +28,6 @@ export function record() {
             audio.play();
             socket.emit('audioMessage', audioChunks);
         });
-        mediaRecorder.stop();
 
         setTimeout(() => {
             mediaRecorder.stop();

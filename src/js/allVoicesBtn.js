@@ -1,7 +1,8 @@
 export function getAllVoices() {
+    let url = new URL('https://voicy-speaker.herokuapp.com');
     let xhr = new XMLHttpRequest();
 
-    xhr.open('GET', url + 'voices');
+    xhr.open('GET', '${url}voices');
 
     xhr.responseType = 'json';
 
@@ -11,12 +12,21 @@ export function getAllVoices() {
         if (xhr.status != 200) {
             alert(`Ошибка ${xhr.status}: ${xhr.statusText}`);
         } else {
-            var voices = [];
-            var voicesLength = xhr.response.length;
-            for (let i = 0; i < voicesLength; i++) {
-                voices.push(i);
+            const voicesLength = xhr.response.length;
+            for (let i = 0;i < voicesLength; i++) {
+                if (xhr.response.length) {
+                    let li = document.createElement('li');
+                    li.classList.add('audioElement');
+                    li.innerHTML = xhr.response[i].timeStamp.substr(0, 24);
+                    document.getElementById('voicesList').appendChild(li);
+                    li.addEventListener('click', function () {
+                        const audioBlob = new Blob([new Uint8Array(xhr.response[i].audioBlob[0].data).buffer]);
+                        const audioUrl = URL.createObjectURL(audioBlob);
+                        const audio = new Audio(audioUrl);
+                        audio.play();
+                    })
+                }
             }
-            document.getElementById("listOfVoices").innerHTML = voices;
         }
     };
 }

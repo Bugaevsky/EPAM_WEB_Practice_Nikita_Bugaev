@@ -6,6 +6,7 @@ import '../dist/normalize.css';
 import {chooseMode} from './js/toolbar.js';
 import {record} from "./js/microphoneBtn";
 import {listenStream} from "./js/streamBtn";
+import {getAllVoices} from "./js/allVoicesBtn";
 
 var myAllVoices = document.getElementById("myAllVoices");
 var myStream = document.getElementById("myStream");
@@ -14,6 +15,10 @@ var myMicrophone = document.getElementById("myMicrophone");
 myAllVoices.addEventListener("click", function () {
     chooseMode('AllVoices', this)
 });
+myAllVoices.addEventListener("click", function () {
+    getAllVoices();
+});
+
 
 myStream.addEventListener("click", function () {
     chooseMode('Stream', this)
